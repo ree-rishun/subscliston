@@ -54,6 +54,29 @@ function calcSum() {
 }
 
 
+// サブスクの一覧を表示
+function printSubscription() {
+  // 一覧の追加先エレメントを変数へ格納
+  const list_area = document.getElementById('subsc_list')
+
+  // サブスクの一覧から1つずつDOMに追加していく
+  for(let subscription in subscription_list) {
+    // エレメントを作成
+    let new_element = document.createElement('tr');
+
+    // HTMLを書き込み
+    new_element.innerHTML = `
+      <td class="pay_day"><span>${ subscription_list[subscription].day }</span></td>
+      <td class="pay_name">${ subscription_list[subscription].name }</td>
+      <td class="pay_price"><span>&yen;${ subscription_list[subscription].price.toLocaleString() }</span>/month</td>
+    `
+
+    // 一覧に追加
+    list_area.appendChild(new_element);
+  }
+}
+
+
 // メイン関数
 function main() {
   // TODO: Firestoreの情報を取得
@@ -61,7 +84,8 @@ function main() {
   // 合計額の計算処理
   calcSum();
 
-  // TODO: サブスクの一覧を表示
+  // サブスクの一覧を表示
+  printSubscription();
 }
 
 
