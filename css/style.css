@@ -1,36 +1,67 @@
 @charset "utf-8";
 
 html, body {
-    background-color: #536aff;
+    background-color: #6851ff;
+}
+
+.month_total_background {
+    display: block;
+    width: 100%;
+    height: 500px;
+    background-color: #ffffff;
+    background-image: url("../src/main_background.png");
+    background-position: center;
+    background-size: contain;
 }
 
 .month_total {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding-top: 100px;
     text-align: center;
-    font-size: 4rem;
-    color: #FFFFFF;
+    font-size: 9rem;
+    color: #6851ff;
+    font-family: 'Heebo', sans-serif;
 }
 
 .month_total h2 {
     font-size: 3rem;
+    color: #aaaaaa;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: bold;
 }
 
 #subsc_list {
     font-size: 2.6rem;
     color: #FFFFFF;
     width: 90%;
-    margin: 0 5%;
-    line-height: 100px;
+    margin: 40px 5% 0;
+    line-height: 120px;
+}
+#subsc_list tr {
+    height: 120px;
 }
 
 .pay_day {
-    width: 15%;
+    width: 10%;
     text-align: left;
-    font-size: 4rem;
     font-family: 'Work Sans', sans-serif;
 }
 
+.pay_day span {
+    display: block;
+    width: 9vw;
+    height: 9vw;
+    line-height: 9vw;
+    border: solid #ffffff 2px;
+    border-radius: 9vw;
+    font-size: 3rem;
+    text-align: center;
+}
+
 .pay_name {
-    width: 60%;
+    width: 65%;
     text-align: center;
 }
 
@@ -38,15 +69,11 @@ html, body {
     width: 25%;
     text-align: right;
     font-family: 'Work Sans', sans-serif;
+    font-size: 1.9rem;
 }
 
 .pay_price span {
-    display: block;
-    width: 100%;
-    height: 60px;
-    border-radius: 60px;
-    line-height: 60px;
-    background-color: #FFFFFF;
-    color: darkslategrey;
-    text-align: center;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 2.9rem;
 }
