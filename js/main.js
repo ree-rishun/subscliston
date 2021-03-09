@@ -76,10 +76,22 @@ function printSubscription() {
   }
 }
 
+// 今月の年月を取得
+function getMonth() {
+  // 今日の日付を取得
+  const today = new Date;
+
+  // 年月を表示
+  document.getElementById('this_month').innerText =
+    today.getFullYear() + '/' + ( '00' + today.getMonth() ).slice( -2 );
+}
 
 // メイン関数
 function main() {
   // TODO: Firestoreの情報を取得
+
+  // 年月を表示
+  getMonth();
 
   // 合計額の計算処理
   calcSum();
