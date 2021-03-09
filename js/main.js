@@ -83,8 +83,22 @@ function getMonth() {
 
   // 年月を表示
   document.getElementById('this_month').innerText =
-    today.getFullYear() + '/' + ( '00' + today.getMonth() ).slice( -2 );
+    today.getFullYear() + '/' + ( '00' + (today.getMonth() + 1) ).slice( -2 );
 }
+
+// 新規追加処理
+function addSubsc() {
+  const form = document.forms['add_form'].getElementsByTagName("input");
+
+  console.log(form['title'].value);     // タイトルを取得
+  console.log(form['startedAt'].value); // 開始日を取得
+  console.log(form['price'].value);     // 値段を取得
+
+  // TODO: Firebaseへの追加処理
+}
+
+// 日付の初期化
+
 
 // メイン関数
 function main() {

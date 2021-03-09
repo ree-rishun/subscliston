@@ -14,30 +14,30 @@
 <body>
   <div class="month_total_background">
     <div class="month_total">
-      <h1 class="create_title">新規サブスク追加</h1>
+      <h1 class="create_title">サインインする</h1>
     </div>
   </div>
 
-  <form class="add_form">
+  <form id="signin_form">
     <input
-      type="text"
-      placeholder="タイトルを入力"
-      maxlength="20">
-    <input
-      type="date"
-      placeholder="開始日を選択"
-      maxlength="20">
-    <input
-      type="number"
-      placeholder="金額を入力"
-      min="0">
+      type="email"
+      name="email"
+      placeholder="メールアドレスを入力">
 
-    <button>
-      追加する
-    </button>
+    <input
+      type="password"
+      name="password"
+      placeholder="パスワードを入力">
   </form>
 
-  <!-- JS -->
-  <script src="js/main.js"></script>
+  <button
+    class="submit_button"
+    onclick="addSubsc()">
+    サインイン
+  </button>
+
+  <p class="jump_link">
+    <a href="signup.html">新規登録はこちら</a>
+  </p>
 </body>
 </html>

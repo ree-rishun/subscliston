@@ -14,19 +14,33 @@
 <body>
   <div class="month_total_background">
     <div class="month_total">
-      <p id="subsc_total_price">&yen;0</p>
-      <h2 id="this_month"></h2>
+      <h1 class="create_title">新規サブスク追加</h1>
     </div>
   </div>
-  <div>
-    <table id="subsc_list"></table>
-  </div>
 
-  <a
-    href="add.html"
-    class="add_button">
-    +
-  </a>
+  <form id="add_form">
+    <input
+      type="text"
+      name="title"
+      placeholder="タイトルを入力"
+      maxlength="20">
+    <input
+      type="date"
+      name="startedAt"
+      placeholder="開始日を選択"
+      maxlength="20">
+    <input
+      type="number"
+      name="price"
+      placeholder="金額を入力"
+      min="0">
+  </form>
+
+  <button
+    class="submit_button"
+    onclick="addSubsc()">
+    追加する
+  </button>
 
   <!-- JS -->
   <script src="js/main.js"></script>

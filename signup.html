@@ -14,21 +14,34 @@
 <body>
   <div class="month_total_background">
     <div class="month_total">
-      <p id="subsc_total_price">&yen;0</p>
-      <h2 id="this_month"></h2>
+      <h1 class="create_title">新規登録</h1>
     </div>
   </div>
-  <div>
-    <table id="subsc_list"></table>
-  </div>
 
-  <a
-    href="add.html"
-    class="add_button">
-    +
-  </a>
+  <form id="signin_form">
+    <input
+      type="email"
+      name="email"
+      placeholder="メールアドレスを入力">
 
-  <!-- JS -->
-  <script src="js/main.js"></script>
+    <input
+      type="password"
+      name="password"
+      placeholder="パスワードを入力">
+    <input
+      type="password"
+      name="password"
+      placeholder="パスワードを確認">
+  </form>
+
+  <button
+    class="submit_button"
+    onclick="addSubsc()">
+    サインイン
+  </button>
+
+  <p class="jump_link">
+    <a href="signin.html">既に会員の方はこちら</a>
+  </p>
 </body>
 </html>

@@ -113,7 +113,7 @@ input::placeholder {
     color: #e4e4e4;
 }
 
-.add_form button {
+.submit_button {
     display: block;
     width: 400px;
     height: 100px;
@@ -125,4 +125,37 @@ input::placeholder {
     outline: none;
     border: none;
     border-radius: 10px;
+}
+
+.jump_link {
+    margin-top: 100px;
+    text-align: center;
+}
+
+.jump_link :link, .jump_link :visited {
+    color: #ffffff;
+    font-size: 3rem;
+}
+
+.add_button {
+    position: fixed;
+    bottom: 5vw;
+    right: 5vw;
+    width: 17vw;
+    height: 17vw;
+    line-height: 17vw;
+    border-radius: 17vw;
+    background-color: #ffffff;
+    color: #6851ff;
+    font-size: 12vw;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    text-align: center;
+    text-decoration: none;
+}
+
+.add_button:focus {
+    border: none;
+    outline: none;
 }
