@@ -30,5 +30,23 @@
 
   <!-- JS -->
   <script src="js/main.js"></script>
+  <script>
+    // メイン関数
+    function main() {
+      // TODO: Firestoreの情報を取得
+
+      // 年月を表示
+      getMonth();
+
+      // 合計額の計算処理
+      calcSum();
+
+      // サブスクの一覧を表示
+      printSubscription();
+    }
+
+    // DOM読み込み後にメイン関数を実行
+    document.addEventListener("DOMContentLoaded", main);
+  </script>
 </body>
 </html>

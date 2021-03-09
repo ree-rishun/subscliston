@@ -86,6 +86,16 @@ function getMonth() {
     today.getFullYear() + '/' + ( '00' + (today.getMonth() + 1) ).slice( -2 );
 }
 
+// 初期日を追加
+function dateInit() {
+  // 今日の日付を取得
+  const today = new Date;
+
+  // 年月を表示
+  document.forms['add_form'].getElementsByTagName("input")['startedAt'].value =
+    today.getFullYear() + '-' + ( '00' + (today.getMonth() + 1) ).slice( -2 ) + '-' + ( '00' + (today.getDate()) ).slice( -2 );
+}
+
 // 新規追加処理
 function addSubsc() {
   const form = document.forms['add_form'].getElementsByTagName("input");
@@ -96,24 +106,3 @@ function addSubsc() {
 
   // TODO: Firebaseへの追加処理
 }
-
-// 日付の初期化
-
-
-// メイン関数
-function main() {
-  // TODO: Firestoreの情報を取得
-
-  // 年月を表示
-  getMonth();
-
-  // 合計額の計算処理
-  calcSum();
-
-  // サブスクの一覧を表示
-  printSubscription();
-}
-
-
-// DOM読み込み後にメイン関数を実行
-document.addEventListener("DOMContentLoaded", main);
