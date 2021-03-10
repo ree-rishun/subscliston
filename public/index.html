@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>subscliston</title>
+  <!-- style -->
+  <link href="css/reset.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+
+  <!-- font -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@700&family=Work+Sans:wght@300&display=swap?family=Open+Sans&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+
+  <!-- FirebaseのSDK追加部分 開始 -->
+  <script defer src="/__/firebase/8.2.9/firebase-app.js"></script>
+  <script defer src="/__/firebase/8.2.9/firebase-auth.js"></script>
+  <script defer src="/__/firebase/8.2.9/firebase-firestore.js"></script>
+  <script defer src="/__/firebase/init.js"></script>
+  <!-- FirebaseのSDK追加部分 終了 -->
+</head>
+<body>
+  <div class="month_total_background">
+    <div class="month_total">
+      <p id="subsc_total_price">&yen;0</p>
+      <h2 id="this_month"></h2>
+    </div>
+  </div>
+  <div>
+    <table id="subsc_list"></table>
+  </div>
+
+  <button
+    onclick="switchAddModal()"
+    class="add_button">
+    +
+  </button>
+
+  <!-- ログインモーダル -->
+  <div id="signin_modal_layout">
+    <div id="signin_modal">
+      <h2>Googleアカウントでログイン</h2>
+
+      <button
+        class="submit_button"
+        onclick="auth()">
+        Googleでサインイン
+      </button>
+    </div>
+  </div>
+
+  <!-- 新規追加モーダル -->
+  <div id="add_modal_layout">
+    <div id="add_modal">
+      <h2>新規追加</h2>
+
+      <form id="add_form">
+        <input
+          type="text"
+          name="title"
+          placeholder="タイトルを入力"
+          maxlength="20">
+        <input
+          type="date"
+          name="startedAt"
+          placeholder="開始日を選択"
+          maxlength="20">
+        <input
+          type="number"
+          name="price"
+          placeholder="金額を入力"
+          min="0">
+      </form>
+
+      <button
+        class="submit_button"
+        onclick="addSubsc()">
+        追加する
+      </button>
+    </div>
+  </div>
+
+  <!-- 編集モーダル -->
+  <div id="edit_modal_layout">
+    <div id="edit_modal">
+      <h2>編集</h2>
+
+      <form id="edit_form">
+        <input
+          type="text"
+          name="title"
+          placeholder="タイトルを入力"
+          maxlength="20">
+        <input
+          type="number"
+          name="price"
+          placeholder="金額を入力"
+          min="0">
+      </form>
+
+      <p>
+        契約開始日：<span id="startAt"></span>
+      </p>
+
+      <button
+        class="cancel_button"
+        onclick="">
+        解約する
+      </button>
+
+      <button
+        id="save_button"
+        class="save_button">
+        保存する
+      </button>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script src="js/main.js"></script>
+  <script src="js/auth.js"></script>
+  <script>
+    // メイン関数
+    function main() {
+      // 認証済みの場合はログインモーダルを非表示にする
+      if (firebase.auth().currentUser) {
+        document.getElementById('signin_modal_layout').style.display = 'none';
+      }
+    }
+
+    // DOM読み込み後にメイン関数を実行
+    document.addEventListener("DOMContentLoaded", main);
+  </script>
+</body>
+</html>

@@ -3,13 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <title>subscliston</title>
-  <link href="css/reset.css"rel="stylesheet">
+  <!-- style -->
+  <link href="css/reset.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
 
   <!-- font -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@700&family=Work+Sans:wght@300&display=swap?family=Open+Sans&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+
+  <!-- FirebaseのSDK追加部分 開始 -->
+  <script defer src="/__/firebase/8.2.9/firebase-app.js"></script>
+  <script defer src="/__/firebase/8.2.9/firebase-auth.js"></script>
+  <script defer src="/__/firebase/8.2.9/firebase-firestore.js"></script>
+  <script defer src="/__/firebase/init.js"></script>
+  <!-- FirebaseのSDK追加部分 終了 -->
 </head>
 <body>
   <div class="month_total_background">
@@ -18,26 +26,17 @@
     </div>
   </div>
 
-  <form id="signin_form">
-    <input
-      type="email"
-      name="email"
-      placeholder="メールアドレスを入力">
-
-    <input
-      type="password"
-      name="password"
-      placeholder="パスワードを入力">
-  </form>
+  <p
+    class="google_description">
+    Googleアカウントで始めよう！
+  </p>
 
   <button
     class="submit_button"
-    onclick="addSubsc()">
-    サインイン
+    onclick="auth()">
+    Googleでサインイン
   </button>
 
-  <p class="jump_link">
-    <a href="signup.html">新規登録はこちら</a>
-  </p>
+  <script src="js/auth.js"></script>
 </body>
 </html>

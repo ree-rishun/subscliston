@@ -1,0 +1,320 @@
+@charset "utf-8";
+
+html, body {
+    background-color: #6851ff;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/*--- 新規サブスク追加タイトル ---*/
+.create_title {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding-top: 100px;
+    text-align: center;
+    font-size: 5rem;
+    color: #6851ff;
+    font-family: 'Heebo', sans-serif;
+}
+
+.month_total_background {
+    display: block;
+    width: 100%;
+    height: 500px;
+    background-color: #ffffff;
+    background-image: url("../src/main_background.png");
+    background-position: center;
+    background-size: contain;
+}
+
+.month_total {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding-top: 100px;
+    text-align: center;
+    font-size: 9rem;
+    color: #6851ff;
+    font-family: 'Heebo', sans-serif;
+}
+
+.month_total h2 {
+    font-size: 3rem;
+    color: #aaaaaa;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: bold;
+}
+
+#subsc_list {
+    font-size: 2.6rem;
+    color: #FFFFFF;
+    width: 90%;
+    margin: 40px 5% 0;
+    line-height: 120px;
+}
+#subsc_list tr {
+    height: 120px;
+}
+
+.pay_day {
+    width: 10%;
+    text-align: left;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.pay_day span {
+    display: block;
+    width: 9vw;
+    height: 9vw;
+    line-height: 9vw;
+    border: solid #ffffff 2px;
+    border-radius: 9vw;
+    font-size: 3rem;
+    text-align: center;
+}
+
+.pay_name {
+    width: 65%;
+    text-align: center;
+}
+
+.pay_price {
+    width: 25%;
+    text-align: right;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.9rem;
+}
+
+.pay_price span {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 2.9rem;
+}
+
+
+form {
+    text-align: center;
+}
+
+input {
+    display: block;
+    width: 70vw;
+    height: 100px;
+    margin: 100px auto 0;
+    background: none;
+    border: none;
+    outline: none;
+    border-bottom: solid 2px #6851ff;
+    color: #6851ff;
+    font-size: 3rem;
+    text-align: center;
+}
+
+input::placeholder {
+    color: #c2c2c2;
+}
+
+.submit_button {
+    display: block;
+    width: auto;
+    height: 100px;
+    margin: 100px auto 0;
+    padding: 0 40px;
+    background-color: white;
+    color: #6851ff;
+    font-weight: bold;
+    font-size: 3rem;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+}
+
+.jump_link {
+    margin-top: 100px;
+    text-align: center;
+}
+
+.jump_link :link, .jump_link :visited {
+    color: #ffffff;
+    font-size: 3rem;
+}
+
+.add_button, .add_button :link, .add_button :visited {
+    position: fixed;
+    bottom: 5vw;
+    right: 5vw;
+    width: 17vw;
+    height: 17vw;
+    line-height: 17vw;
+    border-radius: 17vw;
+    background-color: #ffffff;
+    color: #6851ff;
+    font-size: 12vw;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    text-align: center;
+    text-decoration: none;
+}
+
+.add_button:focus {
+    border: none;
+    outline: none;
+}
+
+.google_description {
+    margin: 100px 0;
+    color: #ffffff;
+    font-size: 3rem;
+    text-align: center;
+}
+
+#signin_modal_layout {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0,0,0,.5);
+}
+
+#signin_modal {
+    position: fixed;
+    z-index: 100;
+    top: 20vh;
+    left: 5%;
+    display: block;
+    width: 90%;
+    height: auto;
+    padding: 5vh 0 5vh;
+    background-color: white;
+}
+
+#signin_modal h2 {
+    color: #6851ff;
+    font-size: 5vw;
+    text-align: center;
+}
+
+
+#signin_modal .submit_button {
+    display: block;
+    width: auto;
+    height: 100px;
+    margin: 100px auto 0;
+    padding: 0 40px;
+    background-color: #6851ff;
+    color: white;
+    font-weight: bold;
+    font-size: 3rem;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+}
+
+
+/*-- 新規追加モーダルのスタイル --*/
+#add_modal_layout {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0,0,0,.5);
+}
+
+#add_modal {
+    position: fixed;
+    z-index: 100;
+    top: 5vh;
+    left: 5%;
+    display: block;
+    width: 90%;
+    height: auto;
+    padding: 5vh 0 5vh;
+    background-color: white;
+}
+
+#add_modal h2 {
+    color: #6851ff;
+    font-size: 5vw;
+    text-align: center;
+}
+
+
+#add_modal .submit_button {
+    display: block;
+    width: auto;
+    height: 100px;
+    margin: 100px auto 0;
+    padding: 0 40px;
+    background-color: #6851ff;
+    color: white;
+    font-weight: bold;
+    font-size: 3rem;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+}
+
+
+/*-- 編集モーダルのスタイル --*/
+#edit_modal_layout {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0,0,0,.5);
+}
+
+#edit_modal {
+    position: fixed;
+    z-index: 100;
+    top: 5vh;
+    left: 5%;
+    display: block;
+    width: 90%;
+    height: auto;
+    padding: 5vh 0 5vh;
+    background-color: white;
+}
+
+#edit_modal h2 {
+    color: #6851ff;
+    font-size: 5vw;
+    text-align: center;
+}
+
+#edit_modal .cancel_button {
+    display: block;
+    width: auto;
+    height: 100px;
+    margin: 100px auto 0;
+    padding: 0 40px;
+    background-color: #ff5344;
+    color: white;
+    font-weight: bold;
+    font-size: 3rem;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+}
+
+#edit_modal .save_button {
+    display: block;
+    width: auto;
+    height: 100px;
+    margin: 100px auto 0;
+    padding: 0 40px;
+    background-color: #6851ff;
+    color: white;
+    font-weight: bold;
+    font-size: 3rem;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+}
