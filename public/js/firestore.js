@@ -1,4 +1,4 @@
-// 新規追加処理
+// サブスクの新規追加処理
 function addSubsc() {
   const form = document.forms['add_form'].getElementsByTagName("input");
 
@@ -32,35 +32,15 @@ function addSubsc() {
 }
 
 
-// 編集結果の保存
-function saveEdit(id) {
-  // フォームを取得
-  const form = document.forms['edit_form'].getElementsByTagName("input");
-  const  db = firebase.firestore();
-
-  // TODO: サブスクの情報を更新
-  db.collection('subscription').doc(id).update({
-    title: form['title'].value, // サブスク名
-    price: form['price'].value  // 価格
-  })
-    .then((docRef) => { // 成功した場合
-    })
-    .catch((error) => { // 失敗した場合
-      console.error("Error adding document: ", error);
-    });
-
-  // ページ内のコンテンツをリフレッシュ
-  pageInit();
-
-  // 非表示にする
-  document.getElementById('edit_modal_layout').style.display = 'none';
-}
-
-
-// サブスクの一覧を表示
+// サブスクの一覧を取得
 function printSubscription() {
   // 一覧の追加先エレメントを変数へ格納
   const user = firebase.auth().currentUser;
+
+  // サブスク一覧リストを初期化
+  subscription_list = {};
+
+  // TODO: Firestoreオブジェクトのインスタンスを作成
   const  db = firebase.firestore();
 
   // TODO: サブスクの一覧を取得
@@ -96,4 +76,59 @@ function printSubscription() {
         })
     });
   });
+}
+
+
+// 編集結果の保存
+function saveEdit(id) {
+  // フォームを取得
+  const form = document.forms['edit_form'].getElementsByTagName("input");
+  const  db = firebase.firestore();
+
+  // TODO: サブスクの情報を更新
+  db.collection('subscription').doc(id).update({
+    title: form['title'].value, // サブスク名
+    price: form['price'].value  // 価格
+  })
+    .then((docRef) => { // 成功した場合
+    })
+    .catch((error) => { // 失敗した場合
+      console.error("Error adding document: ", error);
+    });
+
+  // ページ内のコンテンツをリフレッシュ
+  pageInit();
+
+  // 非表示にする
+  document.getElementById('edit_modal_layout').style.display = 'none';
+}
+
+
+// 解約処理
+function subsc_cancel(id) {
+  // TODO: ログイン中のユーザ情報を取得
+  const user = firebase.auth().currentUser;
+
+  // TODO: Firestoreオブジェクトのインスタンスを作成
+  const  db = firebase.firestore();
+
+  // TODO: サブスクをFirestoreから削除する
+  db.collection('subscription').doc(id).delete().then(() => {
+    console.log("Document successfully deleted!");
+  }).catch((error) => {
+    console.error("Error removing document: ", error);
+  });
+
+  // TODO: サブスクのIDをユーザ情報から削除する
+  db.collection('users').doc(user.uid).collection('subscription').doc(id).delete().then(() => {
+    console.log("Document successfully deleted!");
+  }).catch((error) => {
+    console.error("Error removing document: ", error);
+  });
+
+  // ページ内のコンテンツをリフレッシュ
+  pageInit();
+
+  // 非表示にする
+  document.getElementById('edit_modal_layout').style.display = 'none';
 }

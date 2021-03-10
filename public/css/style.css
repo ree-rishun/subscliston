@@ -259,6 +259,21 @@ input::placeholder {
     border-radius: 10px;
 }
 
+#add_modal .cancel_button {
+    display: block;
+    width: auto;
+    height: 100px;
+    margin: 100px auto 0;
+    padding: 0 40px;
+    background-color: #ff5344;
+    color: white;
+    font-weight: bold;
+    font-size: 3rem;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+}
+
 
 /*-- 編集モーダルのスタイル --*/
 #edit_modal_layout {
@@ -317,4 +332,10 @@ input::placeholder {
     outline: none;
     border: none;
     border-radius: 10px;
+}
+
+#edit_modal p {
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 40px;
 }

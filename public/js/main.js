@@ -27,6 +27,7 @@ function openEditModal(id) {
 
   // ボタンを上書き
   document.getElementById('save_button').onclick = function () {saveEdit(id)};
+  document.getElementById('cancel_button').onclick = function () {subsc_cancel(id)};
 
   // 表示する
   document.getElementById('edit_modal_layout').style.display = 'block';
@@ -58,6 +59,11 @@ function switchAddModal() {
 
   // 日付選択部分の初期化
   dateInit();
+
+  // フォームを取得
+  const form = document.forms['add_form'].getElementsByTagName("input");
+  form['title'].value = '';
+  form['price'].value = 0;
 
   if (addModal.style.display === 'block') {
     addModal.style.display = 'none';
