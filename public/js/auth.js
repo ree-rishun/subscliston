@@ -1,18 +1,23 @@
 // 認証処理作成箇所
 function auth() {
+  // TODO: Googleプロバイダオブジェクトのインスタンスを作成
   const provider = new firebase.auth.GoogleAuthProvider();
-  // Google認証のポップアップ表示
+
+  // TODO: Google認証のポップアップ表示
   firebase
     .auth()
     .signInWithPopup(provider)
-    .then((result) => {
-      // 新規コード追加部分
+    .then((result) => { // 認証成功
+      // TODO: ユーザ情報の更新関数
       updateUserinfo(result.user);
+
+      // モーダルを非表示にする
       document.getElementById('signin_modal_layout').style.display = 'none';
+
+      // ページ情報を読み込む
       pageInit();
     })
-    .catch(function (error) {
-      // 認証失敗
+    .catch(function (error) { // 認証失敗
       alert("アカウント連携に失敗しました");
       console.log({ error });
     });
@@ -20,8 +25,10 @@ function auth() {
 
 // ユーザ情報登録/更新
 function updateUserinfo(user) {
+  // TODO: Firestoreオブジェクトのインスタンスを作成
   const  db = firebase.firestore();
-  // DBにユーザ情報を登録
+
+  // TODO: DBにユーザ情報を登録
   db.collection("users").doc(user.uid).set({
     uid: user.uid,                  // UID
     displayName: user.displayName,  // 表示名
@@ -33,6 +40,4 @@ function updateUserinfo(user) {
     .catch((error) => { // 失敗時
       console.error("Error writing document: ", error);
     });
-
-  console.log(firebase.auth())
 }
